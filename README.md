@@ -1,6 +1,6 @@
 # Vue 3 Plugin Template for Figma
 
-Cloned from [@antonijap/Vue-Plugin-Template] and updated to use Vue 3
+Cloned from [@antonijap/Vue-Plugin-Template](https://github.com/antonijap/Vue-Plugin-Template) and updated to use Vue 3
 
 ## Features:
 
