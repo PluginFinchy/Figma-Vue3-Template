@@ -8,9 +8,11 @@
 		"build": "webpack --mode=production"
 	},
 	"dependencies": {
-		"@vue/compiler-sfc": "^3.0.2"
+		"@vue/compiler-sfc": "^3.0.2",
+		"figma-plugin-ds": "^0.1.8"
 	},
 	"devDependencies": {
+		"@figma/plugin-typings": "^1.18.2",
 		"@types/node": "^12.0.5",
 		"css-loader": "^2.1.1",
 		"html-webpack-inline-source-plugin": "0.0.10",
