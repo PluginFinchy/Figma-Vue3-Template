@@ -9,7 +9,7 @@ Cloned from [@antonijap/Vue-Plugin-Template](https://github.com/antonijap/Vue-Pl
 - [figma-plugin-ds](https://github.com/thomas-lowry/figma-plugin-ds) integration
 - Message handler helper functions to simplify communication between the main code and the UI code
 
-## Downloading the template
+## Downloading the template
 
 There are a few ways you can use this template. The simplest way is to download the .zip of this repo.
 
