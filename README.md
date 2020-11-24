@@ -9,6 +9,19 @@ Cloned from [@antonijap/Vue-Plugin-Template](https://github.com/antonijap/Vue-Pl
 - [figma-plugin-ds](https://github.com/thomas-lowry/figma-plugin-ds) integration
 - Message handler helper functions to simplify communication between the main code and the UI code
 
+## Downloading the template
+
+There are a few ways you can use this template. 
+
+The simplest way is to hit ['use this template'](https://github.com/LukeFinch/Figma-Vue3-Template/generate) 
+
+Or [download the .zip](https://github.com/LukeFinch/Figma-Vue3-Template/archive/main.zip) of this repo.
+
+Alternatively you can use this template as a template for your own github repo through the [github cli](https://github.com/cli/cli)
+
+`gh repo create "<YOUR REPO NAME>" -p "https://github.com/LukeFinch/Figma-Vue3-Template"`
+
+
 ## How to use?
 
 1. Install dependencies with `npm i`.
