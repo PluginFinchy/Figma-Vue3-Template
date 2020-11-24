@@ -11,7 +11,11 @@ Cloned from [@antonijap/Vue-Plugin-Template](https://github.com/antonijap/Vue-Pl
 
 ## Downloading the template
 
-There are a few ways you can use this template. The simplest way is to download the .zip of this repo.
+There are a few ways you can use this template. 
+
+The simplest way is to hit ['use this template'](https://github.com/LukeFinch/Figma-Vue3-Template/generate) 
+
+Or [download the .zip](https://github.com/LukeFinch/Figma-Vue3-Template/archive/main.zip) of this repo.
 
 Alternatively you can use this template as a template for your own github repo through the [github cli](https://github.com/cli/cli)
 
