@@ -7,29 +7,37 @@
 
 <script>
 import styles from 'figma-plugin-ds/dist/figma-plugin-ds.css'
-import { dispatch, handleEvent } from "./uiMessageHandler";
+import {
+  dispatch,
+  handleEvent
+} from "./uiMessageHandler";
+import {
+  onMounted
+} from 'vue';
 
 export default {
-  data() {
-    return {
-      message: ""
-    };
-  },
-  mounted() {
-    // Add these lines to initialize the interactive figma-ui components as needed.
+  setup() {
 
+    const message = ref("")
 
-    // The following shows how messages from the main code can be handled in the UI code.
-    handleEvent("nodeCreated", nodeID => {
-      this.message = `Node ${nodeID} was created!`;
-    });
-  },
-  methods: {
-    createNode() {
+    function createNode() {
       // This shows how the UI code can send messages to the main code.
       dispatch("createNode");
     }
+    onMounted(() => {
+
+      // The following shows how messages from the main code can be handled in the UI code.
+      handleEvent("nodeCreated", nodeID => {
+        message.value = `Node ${nodeID} was created!`;
+      });
+    })
+
+    return {
+      message,
+      createNode
+    };
   }
+
 };
 </script>
 
