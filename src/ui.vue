@@ -12,7 +12,8 @@ import {
   handleEvent
 } from "./uiMessageHandler";
 import {
-  onMounted
+  onMounted,
+  ref
 } from 'vue';
 
 export default {
