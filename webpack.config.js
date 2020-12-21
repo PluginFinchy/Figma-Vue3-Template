@@ -2,7 +2,6 @@ const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin
 const RemovePlugin = require('remove-files-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const path = require('path');
 
 module.exports = (env, argv) => ({
@@ -73,7 +72,6 @@ module.exports = (env, argv) => ({
 	plugins:
 		argv.mode === 'production'
 			? [
-					new BundleAnalyzerPlugin(),
 					new VueLoaderPlugin(),
 					new RemovePlugin({
 						after: { include: ['dist/ui.js'] }
@@ -87,7 +85,6 @@ module.exports = (env, argv) => ({
 					new HtmlWebpackInlineSourcePlugin()
 			  ]
 			: [
-					new BundleAnalyzerPlugin(),
 					new VueLoaderPlugin(),
 					new HtmlWebpackPlugin({
 						template: './src/ui.html',
