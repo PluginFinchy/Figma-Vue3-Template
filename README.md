@@ -1,14 +1,16 @@
 # Vue 3 Plugin Template for Figma
 
-Cloned from [@jackiecorn/Vue-Plugin-Template](https://github.com/jackiecorn/Vue-Plugin-Template) and updated to use Vue 3
+This template gets you up and running and building figma plugins with the Vue3 framework in a short time.
 
 ## Features:
 
 - Vue
 - Typescript
 - [figma-plugin-ds](https://github.com/thomas-lowry/figma-plugin-ds) integration
-- Message handler helper functions to simplify communication between the main code and the UI code
+- Message handler helper functions to simplify communication between the main code and the UI code. (Thanks to [@jackiecorn](https://github.com/jackiecorn))
+- Live Server preview to make building UIs faster. `npm run preview`
 
+This template is built on top of [@jackiecorn/Vue-Plugin-Template](https://github.com/jackiecorn/Vue-Plugin-Template) and updated to use Vue3
 ## Downloading the template
 
 There are a few ways you can use this template. 
@@ -27,7 +29,7 @@ Alternatively you can use this template as a template for your own github repo t
 1. Install dependencies with `npm i`.
 2. Run `npm run dev` and a folder named `dist` will be created.
 3. In the Figma desktop app, click on **Create new plugin** / **Link existing plugin** and point it to the `manifest.json` in this project.
-4. Now you can edit the main Figma code from `src/code.ts` and the UI code from `src/ui.vue`. Hitting save will auto-reload the build so you can see your changes right away.
+4. Now you can edit the main Figma code from `src/code.ts` and the UI code from `src/ui/ui.vue`. Hitting save will auto-reload the build so you can see your changes right away.
 5. When you're ready to publish the plugin, run `npm run build` to create a production build.
 
 ## Message handlers

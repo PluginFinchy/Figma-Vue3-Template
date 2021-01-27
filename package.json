@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "webpack --mode=development --watch",
 		"build": "webpack --mode=production",
-		"serve": "live-server --entry-file='livepreview.html'"
+		"preview": "live-server --entry-file='livepreview.html'"
 	},
 	"dependencies": {
 		"@vue/compiler-sfc": "^3.0.2",
