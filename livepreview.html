@@ -1,0 +1,160 @@
+<head>
+    <link rel="stylesheet" href="node_modules/figma-plugin-ds/dist/figma-plugin-ds.css" />
+</head>
+<body>
+    <div class="flex column justify-content-center align-items-center">
+
+    <div id="controls" class="justify-content-center align-items-center">
+        <h1 class="type type--xlarge type--bold">
+            Plugin Preview
+         </h1>
+        
+        <p class="type type--pos type--small type--normal">
+            Set the size for your plugin live preview
+         </p>
+    
+        <div class="flex row gap" id="inputs">
+          <div class="flex-columm">
+          <label class="label" for="hori">Width</label>
+          <div class="input input--with-icon">
+            <div class="icon 	icon--arrow-left-right"></div>
+            <input id="width"  type="number" class="input__field" oninput="resize()" autocomplete="off">
+          </div>
+          </div>
+           <div class="flex-column">
+           <label class="label" for="vert">Height</label>
+          <div class="input input--with-icon">
+            <div class="icon 	icon--up-down"></div>
+            <input id="height" type="number" class="input__field"  oninput="resize()" autocomplete="off">
+          </div>
+          </div>
+          <!-- <button class="button button--primary" click='set' :disabled="selectionCount < 2 || tooManyParents"> Organise Frames </button> -->
+        </div>
+
+          
+    
+
+    </div>
+
+
+    <div class="modal">
+        <div class="modal--header">
+            <div class="modal--title type type--large type--bold">
+                Plugin</div>
+                <div class="icon-button">
+                    <div class="icon icon--close"></div>
+                  </div>
+                </div>
+
+                    <iframe id="iframe" src="./dist/ui.html" style="width:100%;height:100%" frameBorder=0>
+    </div>
+
+    </div>
+</iframe>
+</body>
+<script>
+
+const eventListeners = [];
+ const dispatch = (action, data) => {
+	parent.postMessage({ pluginMessage: { action, data } }, '*');
+};
+const handleEvent = (type, callback) => {
+	eventListeners.push({ type, callback });
+};
+window.onmessage = event => {
+	const message = event.data.pluginMessage;
+	if (message) {
+		for (let eventListener of eventListeners) {
+			if (message.action === eventListener.type) eventListener.callback(message.data);
+		}
+	}
+};
+
+
+
+
+const w = document.getElementById('width')
+const h = document.getElementById('height')
+const iframe = document.getElementById('iframe')
+function docReady(fn) {
+    // see if DOM is already available
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        // call on next available tick
+        setTimeout(fn, 1);
+    } else {
+        document.addEventListener("DOMContentLoaded", fn);
+    }
+}  
+function initalise(){
+    w.value = localStorage.getItem('w') ? localStorage.getItem('w') : 300
+    h.value = localStorage.getItem('h') ? localStorage.getItem('h') : 300
+    resize()
+}
+
+
+
+docReady(initalise)
+function resize(){      
+    localStorage.setItem('w', w.value)
+    localStorage.setItem('h', h.value)
+    iframe.style.width =  w.value
+    iframe.style.height = h.value
+}
+
+
+// handleEvent('updateInstances',() => {
+//     console.log('event happened')
+// })
+
+handleEvent("resizeUI", (size) => {
+    //figma.ui.resize(size[0],size[1])
+    iframe.style.width =  size[0]
+    iframe.style.height = size[1]
+})
+
+</script>
+<style>
+    body{
+        margin: 120px;
+    }
+
+    #controls{
+        max-width: 400px;
+        margin-bottom: var(--size-xlarge)
+    }
+
+    .input__field{
+        border: 1px solid var(--black1);
+    }
+
+    .modal{
+        box-shadow: 0 2px 14px rgba(0,0,0,.15), 0 0 0 0.5px rgba(0,0,0,.2);
+    }
+
+    .modal--header{
+    font-weight: 600;
+    box-sizing: border-box;
+    height: 41px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 8px;
+    padding-right: 4px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+    .modal--title{
+        padding-left: 8px;
+    width: calc(100% - 40px);
+    }
+
+    .gap > *:not(:last-child){
+        margin-right: 8px;
+    }
+</style>
