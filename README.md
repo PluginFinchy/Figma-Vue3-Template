@@ -15,9 +15,9 @@ This template is built on top of [@jackiecorn/Vue-Plugin-Template](https://githu
 
 There are a few ways you can use this template. 
 
-The simplest way is to hit ['use this template'](https://github.com/LukeFinch/Figma-Vue3-Template/generate) 
+The simplest way is to hit ['use this template'](https://github.com/PluginFinchy/Figma-Vue3-Template/generate) 
 
-Or [download the .zip](https://github.com/LukeFinch/Figma-Vue3-Template/archive/main.zip) of this repo.
+Or [download the .zip](https://github.com/PluginFinchy/Figma-Vue3-Template/archive/main.zip) of this repo.
 
 Alternatively you can use this template as a template for your own github repo through the [github cli](https://github.com/cli/cli)
 
